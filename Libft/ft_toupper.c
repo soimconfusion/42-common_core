@@ -6,7 +6,7 @@
 /*   By: anferrei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:37:45 by anferrei          #+#    #+#             */
-/*   Updated: 2024/10/23 15:43:42 by anferrei         ###   ########.fr       */
+/*   Updated: 2024/10/24 17:39:54 by anferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_toupper(int i)
 {
 	if (i >= 'a' && i <= 'z')
 		i -= 32;
-	return ((unsigned char)i);
+	return (i);
 }
 /*
 //if not uns char behaviour undefined

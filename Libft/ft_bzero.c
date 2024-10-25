@@ -6,14 +6,13 @@
 /*   By: anferrei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 16:58:16 by anferrei          #+#    #+#             */
-/*   Updated: 2024/10/22 16:58:34 by anferrei         ###   ########.fr       */
+/*   Updated: 2024/10/24 15:13:05 by anferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-void	bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*ptr;
 

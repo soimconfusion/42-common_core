@@ -1,36 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anferrei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/22 17:41:15 by anferrei          #+#    #+#             */
-/*   Updated: 2024/10/24 15:56:08 by anferrei         ###   ########.fr       */
+/*   Created: 2024/10/24 18:03:36 by anferrei          #+#    #+#             */
+/*   Updated: 2024/10/25 16:34:13 by anferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 #include <stdio.h>
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	i;
+	char	*cp;
+	int		i;
+	int		j;
 
 	i = 0;
-	if (n == 0)
-		return (0);
-	while (s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i] && i < (n -1))
+	j = ft_strlen(s1);
+	if (s1 == NULL || set == NULL)
+		return (NULL);
+	while (s1[i] && ft_strchr(set, s1[i]))
 		i ++;
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	while (j > i && ft_strrchr(set, s1[j - 1]))
+		j --;
+	cp = malloc (j - i + 1);
+	if (!cp)
+		return (NULL);
+	ft_strlcpy(cp, s1 + i, j - i + 1);
+	return (cp);
 }
 /*
 int	main(void)
 {
-	char *str1 = "aaaaaaa";
-	char *str2 = "aaaaaa ";
-	int res = strncmp(str1, str2, 13);
-	int resft = ft_strncmp(str1, str2, 13);
-	printf( "%d  %d", res, resft);
+	char *s1 = "aaaaabzasaadg";
+	char *set = "basdf";
+	char * res = ft_strtrim(s1, set);
+	printf("%s ", res);
 	return (0);
 }*/

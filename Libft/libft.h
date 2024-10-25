@@ -6,7 +6,7 @@
 /*   By: anferrei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:46:43 by anferrei          #+#    #+#             */
-/*   Updated: 2024/10/23 15:48:38 by anferrei         ###   ########.fr       */
+/*   Updated: 2024/10/25 18:05:49 by anferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,9 @@
 # include <ctype.h> //TEST to_lower,upper and all is_functions 
 # include <string.h> //TEST str_len, mem_functions, bzero
 # include <stdlib.h> //TEST atoi, calloc
-# include <limits.h>
 
-int		ft_lower(int i);
-int		ft_upper(int i);
+int		ft_tolower(int i);
+int		ft_toupper(int i);
 int		ft_isalpha(int i);
 int		ft_isalnum(int i);
 int		ft_isdigit(int i);
@@ -41,5 +40,9 @@ char	*ft_strnstr(const char *big, const char *little, size_t len);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
 int		ft_atoi(const char *nptr);
-
+char	*ft_strdup(const char *s);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s1, char const *set);
+char	*ft_itoa(int n);
 #endif

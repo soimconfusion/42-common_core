@@ -6,7 +6,7 @@
 /*   By: anferrei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:37:32 by anferrei          #+#    #+#             */
-/*   Updated: 2024/10/23 15:37:33 by anferrei         ###   ########.fr       */
+/*   Updated: 2024/10/24 17:39:31 by anferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@ int	ft_tolower(int i)
 {
 	if (i >= 'A' && i <= 'Z')
 		i += 32;
-	return ((unsigned char)i);
+	return (i);
 }

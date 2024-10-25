@@ -6,7 +6,7 @@
 /*   By: anferrei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 17:26:44 by anferrei          #+#    #+#             */
-/*   Updated: 2024/10/23 15:23:21 by anferrei         ###   ########.fr       */
+/*   Updated: 2024/10/24 16:09:20 by anferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 
+	if (size <= 0)
+		return (ft_strlen(src));
 	i = 0;
 	if (size > 0)
 	{
