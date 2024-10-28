@@ -17,6 +17,8 @@
 # include <ctype.h> //TEST to_lower,upper and all is_functions 
 # include <string.h> //TEST str_len, mem_functions, bzero
 # include <stdlib.h> //TEST atoi, calloc
+# include <unistd.h> //put function
+# include <unistd.h> //put functions
 
 int		ft_tolower(int i);
 int		ft_toupper(int i);
@@ -45,4 +47,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_itoa(int n);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putrnbr_fd(int n, int fd);
 #endif
