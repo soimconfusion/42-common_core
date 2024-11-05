@@ -6,12 +6,11 @@
 /*   By: anferrei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 16:58:46 by anferrei          #+#    #+#             */
-/*   Updated: 2024/10/22 17:19:11 by anferrei         ###   ########.fr       */
+/*   Updated: 2024/11/05 12:18:33 by anferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

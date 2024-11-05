@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
@@ -29,19 +28,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-/*
-int	main(void)
-{
-	char *str1 = "aaaa";
-	char *str2 = "aaa ";
-	int res = memcmp(str1, str2, 3);
-	int resf = ft_memcmp(str1, str2, 3);
-	printf("%d %d ", res, resf);
-
-	int arr1[] = {1, 2, 3, 4};
-	int arr2[] = {1, 2, 3};
-	res = memcmp(arr1, arr2, sizeof(arr1));
-	resf = ft_memcmp(arr1, arr2, sizeof(arr2));
-	printf("%d, %d", res, resf);
-	return (0);
-}*/

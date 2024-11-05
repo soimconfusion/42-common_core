@@ -6,11 +6,11 @@
 /*   By: anferrei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 17:26:44 by anferrei          #+#    #+#             */
-/*   Updated: 2024/10/24 16:09:20 by anferrei         ###   ########.fr       */
+/*   Updated: 2024/11/05 11:18:19 by anferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h" //chamar strlen
+#include "libft.h" 
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {

@@ -6,12 +6,11 @@
 /*   By: anferrei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 13:56:55 by anferrei          #+#    #+#             */
-/*   Updated: 2024/10/25 14:56:55 by anferrei         ###   ########.fr       */
+/*   Updated: 2024/11/05 12:55:16 by anferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_strdup(const char *s)
 {
@@ -30,16 +29,3 @@ char	*ft_strdup(const char *s)
 	ptr[i] = '\0';
 	return (ptr);
 }
-
-/*
-int	main(void)
-{
-	char source[] = "GeeksForGeeks";
-
-    // A copy of source is created dynamically
-    // and pointer to copy is returned.
-    char* target = ft_strdup(source); 
-
-    printf("%s", target);
-	return (0);
-}*/

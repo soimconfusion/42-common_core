@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <string.h>
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
@@ -34,16 +33,3 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
-/*
-int	main(void)
-{
-	const char *largestring = "Foo Bar Baz";
-	const char *smallstring = "Bar";
-	char *ptr;
-	char *ptrn;
-	char *ptrb;
-	ptr = ft_strnstr(largestring, smallstring, 11);
-	ptrn = ft_strnstr(largestring, smallstring, 4);
-	ptrb = ft_strnstr(largestring, "\0", 11);
-	printf("%s %s %s", ptr, ptrn, ptrb);
-}*/

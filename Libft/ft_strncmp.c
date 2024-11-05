@@ -6,12 +6,11 @@
 /*   By: anferrei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 17:41:15 by anferrei          #+#    #+#             */
-/*   Updated: 2024/10/24 15:56:08 by anferrei         ###   ########.fr       */
+/*   Updated: 2024/11/05 11:50:45 by anferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
@@ -24,13 +23,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		i ++;
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
-/*
-int	main(void)
-{
-	char *str1 = "aaaaaaa";
-	char *str2 = "aaaaaa ";
-	int res = strncmp(str1, str2, 13);
-	int resft = ft_strncmp(str1, str2, 13);
-	printf( "%d  %d", res, resft);
-	return (0);
-}*/

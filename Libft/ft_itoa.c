@@ -6,19 +6,19 @@
 /*   By: anferrei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 17:21:36 by anferrei          #+#    #+#             */
-/*   Updated: 2024/10/25 18:15:07 by anferrei         ###   ########.fr       */
+/*   Updated: 2024/11/04 16:17:57 by anferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int	int_len(int n)
+static unsigned int	ft_len(int n)
 {
-	int	len;
+	unsigned int	len;
 
 	len = 0;
 	if (n == 0)
-		len ++;
+		return (1);
 	if (n < 0)
 		len ++;
 	while (n != 0)
@@ -31,38 +31,28 @@ static	int	int_len(int n)
 
 char	*ft_itoa(int n)
 {
-	char	*num;
-	int		i;
+	char			*s;
+	unsigned int	i;
 
-	i = int_len(n) - 1;
-	num = (char *)malloc(int_len(n));
-	if (!num)
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	i = ft_len(n);
+	s = (char *)malloc(sizeof(char) * (i + 1));
+	if (s == NULL)
 		return (NULL);
-	if (n == 0)
-	{
-		num[0] = '0';
-		num[1] = '\0';
-		return (num);
-	}
 	if (n < 0)
 	{
-		num[0] = '-';
-		n *= -1;
+		s[0] = '-';
+		n = -n;
 	}
+	if (n == 0)
+		s[0] = '0';
+	s[i] = '\0';
 	while (n != 0)
 	{
-		num[i] = (n % 10) + '0';
+		s[i - 1] = (n % 10) + '0';
 		n = n / 10;
 		i --;
 	}
-	return (num);
-}
-
-int	main(void)
-{
-	int	n = 0;
-	int n1 = 123;
-	int n2 = -200;
-	printf ("%s %s %s ", ft_itoa(n), ft_itoa(n1), ft_itoa(n2));
-	return (0);
+	return (s);
 }

@@ -6,12 +6,11 @@
 /*   By: anferrei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 12:10:44 by anferrei          #+#    #+#             */
-/*   Updated: 2024/10/23 12:10:46 by anferrei         ###   ########.fr       */
+/*   Updated: 2024/11/05 12:44:38 by anferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_atoi(const char *nptr)
 {
@@ -37,10 +36,3 @@ int	ft_atoi(const char *nptr)
 	}
 	return (res * sign);
 }
-/*
-int	main(void)
-{
-//	char *str = "   -0012g4";
-	printf("%d %d", atoi(" --10000"), ft_atoi("  --10000"));
-	return (0);
-}*/
