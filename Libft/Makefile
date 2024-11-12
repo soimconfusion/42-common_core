@@ -50,11 +50,10 @@ SRC_B = ft_lstnew.c\
 	ft_lstmap.c
 
 HEADER = libft.h
-#MAIN_SRC = main.c
 
 OBJS = $(SRC:.c=.o)
 OBJS_B = $(SRC_B:.c=.o)
-#MAIN_OBJS = $(MAIN_SRC:.c=.o)
+
 
 all: $(NAME)
 
@@ -65,12 +64,6 @@ $(NAME): $(OBJS)
 #compile objs
 %.o : %.c
 	$(CC) $(FLAGS) -I. -c $< -o $@
-
-#main: all $(MAIN_OBJS)
-#	$(CC) $(FLAGS) -I. $(MAIN_OBJS) -o main $(NAME)
-
-#test: main
-#	./main
 
 clean:
 	rm -f $(OBJS) $(MAIN_OBJS)

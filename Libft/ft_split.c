@@ -116,13 +116,3 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	return (split);
 }
-
-/*
-int	main(void)
-{
-	char *s = "aabaa";
-	char c = 'b';
-	char **res = ft_split(s, c);
-	printf("%s ", res[0]);
-	return (0);
-}*/
