@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anferrei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/12 15:01:40 by anferrei          #+#    #+#             */
+/*   Updated: 2024/11/12 19:05:19 by anferrei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libftprintf.h"
 
 static int	ft_format(const char specifier, va_list ap)
@@ -6,16 +18,16 @@ static int	ft_format(const char specifier, va_list ap)
 
 	count = 0;
 	if (specifier == 'c')
-		count += print_char(va_arg(ap, int));
+		count += ft_prin_char(va_arg(ap, int));
 	else if (specifier == 's')
-		count += print_str(va_arg(ap, char *));
+		count += ft_print_str(va_arg(ap, char *));
 	else if (specifier == 'd' || specifier == 'i')
-		count += print_nbr((long)va_arg(ap, int));
+		count += ft_print_nbr((long)va_arg(ap, int));
 	else if (specifier == 'u')
 		count += print_unsigned(va_arg(ap, unsigned int));
 	else if (specifier == 'p')
 		count += print_ptr(va_arg(ap, void *));
-	else if (specifier == 'x' || sppecifier == 'X')
+	else if (specifier == 'x' || specifier == 'X')
 		count += print_hex((long)va_arg(ap, unsigned int));
 	else if (specifier == '%')
 		count += write(1, "%", 1);
@@ -36,7 +48,7 @@ int	ft_printf(const char *format, ...)
 		if(*format =='%')
 			count += ft_format(*++formart, ap);
 		else
-			count += write(STDOUT_FILENO, format, 1);
+			count += write(1, format, 1);
 		++format;
 	}
 	va_end(ap);
