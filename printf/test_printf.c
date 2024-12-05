@@ -31,12 +31,12 @@ int main(void)
     orig = printf("orig: %u\n", 3000000000U);
     ft = ft_printf("ft  : %u\n", 3000000000U);
     printf("Return values: Orig = %d, FT = %d\n\n", orig, ft);
-/*
+
     // Testing %x and %X
     orig = printf("orig: %x, %X\n", 48879, 48879);
     ft = ft_printf("ft  : %x, %X\n", 48879, 48879);
     printf("Return values: Orig = %d, FT = %d\n\n", orig, ft);
-*/
+
     // Testing %%
     orig = printf("orig: %%\n");
     ft = ft_printf("ft  : %%\n");
