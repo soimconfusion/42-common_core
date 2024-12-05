@@ -12,11 +12,9 @@ int ft_print_hex(char format, unsigned int nb , int fd)
     if (nb >= 16){
         length += ft_print_hex(format, nb / 16, fd);
     }
-    else{
-        if (format == 'X')
-            length += ft_print_char(x_up[nb % 16], fd);
-        else
-            length += ft_print_char(x_low[nb % 16], fd);
-    }
+    if (format == 'X')
+        length += ft_print_char(x_up[nb % 16], fd);
+    else
+        length += ft_print_char(x_low[nb % 16], fd);
     return (length);
 }
