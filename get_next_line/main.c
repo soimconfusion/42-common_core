@@ -1,37 +1,29 @@
-#include <stdio.h>    // For printf, perror
+include <stdio.h>    // For printf and perror
+#include <fcntl.h>    // For open()
 #include "get_next_line.h"
 
-int main(int argc, char **argv)
+int main(void)
 {
     int fd;
     char *line;
 
-    // Open file or use stdin
-    if (argc > 1)
+    // Open a specific file for testing
+    fd = open("input.txt", O_RDONLY);
+    if (fd == -1)
     {
-        fd = open(argv[1], O_RDONLY);
-        if (fd == -1)
-        {
-            perror("Error opening file");
-            return 1;
-        }
-    }
-    else
-    {
-        printf("Reading from standard input. Type CTRL+D (or CTRL+Z on Windows) to exit.\n");
-        fd = 0; // Standard input
+        perror("Error opening file");
+        return 1;
     }
 
     // Read and print lines using get_next_line
     while ((line = get_next_line(fd)) != NULL)
     {
         printf("%s", line);
-        free(line);
+        free(line); // Free the memory allocated for the line
     }
 
-    // Close file descriptor if it was opened
-    if (fd != 0)
-        close(fd);
+    // Close the file descriptor
+    close(fd);
 
     return 0;
 }
