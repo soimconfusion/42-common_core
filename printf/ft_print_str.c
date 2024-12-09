@@ -1,4 +1,16 @@
-#include "ft_printf.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_str.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anferrei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/07 16:56:35 by anferrei          #+#    #+#             */
+/*   Updated: 2024/12/07 16:56:37 by anferrei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../header/ft_printf.h"
 
 int	ft_print_str(char *str, int fd)
 {
@@ -17,5 +29,3 @@ int	ft_print_str(char *str, int fd)
 	}
 	return (length);
 }
-//istead of calling print_char we could have a aux.function str_len
-//and then call directly write

@@ -1,6 +1,19 @@
-#include "ft_printf.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_char.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anferrei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/07 16:25:31 by anferrei          #+#    #+#             */
+/*   Updated: 2024/12/07 16:26:30 by anferrei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int ft_print_char(int c, int fd){
-    return(write(fd, &c, 1));
+#include "../header/ft_printf.h"
+
+int	ft_print_char(int c, int fd)
+{
+	return (write(fd, &c, 1));
 }
 //1 if sucessful, -1 if not
