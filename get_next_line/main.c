@@ -1,4 +1,4 @@
-include <stdio.h>    // For printf and perror
+#include <stdio.h>    // For printf and perror
 #include <fcntl.h>    // For open()
 #include "get_next_line.h"
 
@@ -8,7 +8,9 @@ int main(void)
     char *line;
 
     // Open a specific file for testing
-    fd = open("input.txt", O_RDONLY);
+	//fd = open("input.txt", O_RDONLY);
+	fd= open("input.txt", O_RDONLY);
+	//fd = 0;
     if (fd == -1)
     {
         perror("Error opening file");
