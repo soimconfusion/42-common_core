@@ -6,7 +6,7 @@
 /*   By: anferrei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 12:13:01 by anferrei          #+#    #+#             */
-/*   Updated: 2024/12/09 18:49:53 by anferrei         ###   ########.fr       */
+/*   Updated: 2024/12/08 17:08:16 by anferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,10 @@ static char	*extract_line(char *stored)
 		return (NULL);
 	updated = ft_substr(stored, i + 1, (ft_strlen(stored) - i));
 	if (*updated == 0)
-		updated = ft_free(updated);
+	{
+		ft_free(updated);
+		updated = NULL;
+	}
 	stored[i + 1] = '\0';
 	return (updated);
 }
@@ -70,13 +73,17 @@ char	*get_next_line(int fd)
 {
 	static char	*stored;
 	char		*line;
+	char		*buffer;
 
-	stored = NULL;
+	buffer = malloc((BUFFER_SIZE + 1) * sizeof(char));
+	if (!buffer)
+		return (NULL);
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	stored = read_and_save(fd, stored, buffer);
+	line = read_and_save(fd, stored, buffer);
+	ft_free(buffer);
 	if (!line)
 		return (NULL);
-	line = extract_line(&stored);
+	stored = extract_line(line);
 	return (line);
 }
