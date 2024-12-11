@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
-#include <limits.h>
 
 char	*ft_free(char *ptr)
 {
@@ -34,7 +33,7 @@ char	*read_and_save(int fd, char *stored, char *buffer)
 		if (byt_read == -1)
 		{
 			stored = ft_free(stored);
-			return (NULL);
+			return (NULL); // and freeing the buffer?
 		}
 		if (byt_read == 0)
 			break ;
@@ -50,22 +49,34 @@ char	*read_and_save(int fd, char *stored, char *buffer)
 
 char	*extract_line(char *stored)
 {
-	char	*updated;
+	char	*line;
 	int		i;
 
+	if (!stored || !*stored)
+		return (NULL);
 	i = 0;
 	while (stored[i] && stored[i] != '\n')
 		i++;
-	if (!stored[i])
-		return (NULL);
-	updated = ft_substr(stored, i + 1, (ft_strlen(stored) - i));
-	if (*updated == 0)
-	{
-		ft_free(updated);
-		updated = NULL;
-	}
-	stored[i + 1] = '\0';
-	return (updated);
+	line = ft_substr(stored, 0, i + 1);
+	return (line);
+}
+
+char *update_stored(char *stored)
+{
+    int i;
+    char *new_stored;
+
+    i = 0;
+    while (stored[i] && stored[i] != '\n')
+        i++;
+    if (!stored[i])
+    {
+        free(stored);
+        return (NULL);
+    }
+    new_stored = ft_substr(stored, i + 1, ft_strlen(stored) - i);
+    free(stored);
+    return (new_stored);
 }
 
 char	*get_next_line(int fd)
@@ -83,7 +94,7 @@ char	*get_next_line(int fd)
 	ft_free(buffer);
 	if (!stored[fd])
 		return (NULL);
-	line = ft_strdup(stored[fd]);
-	stored[fd] = extract_line(stored[fd]);
+	line = extract_line(stored[fd]);
+	stored[fd] = update_stored(stored[fd]);
 	return (line);
 }

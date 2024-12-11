@@ -6,7 +6,7 @@ int main()
 	int fd1 = open("file1.txt", O_RDONLY);
 	int fd2 = open("file2.txt", O_RDONLY);
 	int fd3 = open("file3.txt", O_RDONLY);
-	int fd4 = 0;
+	//int fd4 = 0;
 	char *line;
 
     if (fd1 < 0 || fd2 < 0 || fd3 < 0)
@@ -28,9 +28,9 @@ int main()
         printf("%s",line);
         free(line);
 		
-		line = get_next_line(fd4);
-		printf("%s", line);
-		free(line);
+//		line = get_next_line(fd4);
+//		printf("%s", line);
+//		free(line);
 	}
 	close(fd1);
 	close(fd2);
